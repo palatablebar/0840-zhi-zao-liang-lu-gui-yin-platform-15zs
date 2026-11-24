@@ -4,7 +4,7 @@
 .p0840 main{padding:8px;gap:6px}.p0840 .kpis{gap:6px}.p0840 .metric{min-height:70px;padding:9px}
 .p0840 .metric strong{font-size:clamp(19px,2.3vw,31px)}
 .p0840 .board{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
-.p0840 #panel-table{grid-column:span 2}.p0840 #panel-chart{grid-column:span 1}.p0840 #panel-issues{grid-column:span 1}.p0840 #panel-ledger{grid-column:span 1}.p0840 #panel-review{grid-column:span 1}
+.p0840 #panel-table{grid-column:span 2}.p0840 #panel-chart{grid-column:span 1}.p0840 #panel-issues{grid-column:span 1}.p0840 #panel-ledger{grid-column:span 1}.p0840 #panel-review{grid-column:span 1}.p0840 #panel-supplement{grid-column:span 1}
 .p0840 .panel{padding:9px}.p0840 th,.p0840 td{padding:3px 6px}
 .p0840 .panel-head{border-bottom:1px dashed var(--line);padding-bottom:4px}
 

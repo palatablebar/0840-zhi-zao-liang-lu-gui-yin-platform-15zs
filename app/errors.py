@@ -17,6 +17,9 @@ MESSAGES = {
     "STALE_REVIEW": "批次已被更新，请刷新后复核",
     "GATE_BLOCKED": "存在阻断项，不能签发",
     "NOT_APPROVED": "批次尚未签发",
+    "EVIDENCE_NOT_FOUND": "签发证据版本不存在",
+    "SUPPLEMENT_MALFORMED": "补报格式不完整",
+    "SUPPLEMENT_UNSUPPORTED": "该批次无法接收补报",
     "BAD_REQUEST": "请求内容不完整",
 }
 

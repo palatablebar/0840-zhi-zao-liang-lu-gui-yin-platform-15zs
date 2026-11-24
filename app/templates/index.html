@@ -39,6 +39,18 @@
         </div>
       </div>
     </article>
+    <article class="panel" id="panel-supplement">
+      <div class="panel-head"><h2>返工补报</h2><span class="hint" id="supplement-count">--</span></div>
+      <div class="review">
+        <label for="supplement">补报 CSV（可只含变更列）</label>
+        <textarea id="supplement" placeholder="row_id,work_order,stage_seq,rework_qty,rework_good"></textarea>
+        <div class="review-actions">
+          <button id="supplement-send" type="button" disabled>接收补报</button>
+          <span class="hint" id="supplement-note">签发后可用</span>
+        </div>
+      </div>
+      <ul class="issues" id="supplement-list"></ul>
+    </article>
   </section>
 </main>
 {% endblock %}

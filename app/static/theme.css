@@ -71,6 +71,9 @@
 .p0840 .verdict { font-size: 11px; font-weight: 700; letter-spacing: .04em; }
 .p0840 .verdict[data-v="PASS"] { color: var(--accent); }
 .p0840 .verdict[data-v="REVIEW"], .p0840 .verdict[data-v="REJECT"] { color: var(--danger); }
+.p0840 .update { font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+.p0840 .update[data-v="UPDATED"] { color: var(--accent); }
+.p0840 .update[data-v="RETAINED"] { color: var(--muted); }
 .p0840 .issues { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; max-height: 330px; overflow: auto; }
 .p0840 .issues li { display: grid; grid-template-columns: 3.5em 1fr auto; gap: 8px; border-bottom: 1px dashed var(--line); padding: 5px 0; }
 .p0840 .issues li.empty { display:block; }

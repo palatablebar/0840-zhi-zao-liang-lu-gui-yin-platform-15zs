@@ -15,6 +15,7 @@
 | M5 运行对账 | 核对来源行、采信、隔离、重复与计算条目 | `POST /api/stages/reconcile` | `app/reconcile/ledger.py` | `tests/test_reconcile.py` |
 | M6 批次复核 | 带版本号签发或暂缓，拒绝陈旧复核 | `POST /api/runs/{id}/review` | `app/review/service.py` | `tests/test_review.py` |
 | M7 证据交付 | 仅在签发后输出可校验的复核证据 | `GET /api/runs/{id}/evidence` | `app/evidence/render.py` | `tests/test_evidence.py` |
+| M8 返工补报 | 签发后合并补报，逐工单保留或更新损耗 | `POST /api/runs/{id}/supplements` | `app/supplement/service.py` | `tests/test_supplement.py` |
 
 ## 输入陷阱
 
@@ -32,7 +33,10 @@
 | TRAP-18 | `app/intake/reader.py` | `tests/test_traps.py::test_empty_and_header_only_differ` |
 | TRAP-19 | `app/domain/calculate.py` | `tests/test_calculate.py` |
 | TRAP-26 | `app/review/store.py` | `tests/test_review.py::test_stale_revision_is_rejected` |
+| TRAP-27 | `app/supplement/service.py` | `tests/test_supplement.py::test_replaying_same_supplement_does_not_double_count_loss` |
+| TRAP-28 | `app/supplement/service.py` | `tests/test_supplement.py::test_handover_mismatch_keeps_signed_result_but_other_orders_update` |
+| TRAP-29 | `app/service.py` | `tests/test_supplement.py::test_order_is_retained_when_supplement_makes_a_stage_row_invalid` |
 
 ## 深度边界
 
-采信层区分编码、重复表头、列数、空值、全角字符、前导零与冲突重复；整理层负责单位和字段边界；计算层执行核心规则；判定层保留原因码；对账层要求来源行等于采信、隔离、重复和忽略之和；复核层使用版本号阻止陈旧签发。
+采信层区分编码、重复表头、列数、空值、全角字符、前导零与冲突重复；整理层负责单位和字段边界；计算层执行核心规则；判定层保留原因码；对账层要求来源行等于采信、隔离、重复和忽略之和；复核层使用版本号阻止陈旧签发；补报层按工单重算交接量，对不上的沿用已签发结果、对得上的更新损耗，并按内容摘要幂等去重。
